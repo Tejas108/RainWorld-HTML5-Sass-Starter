@@ -183,7 +183,7 @@ function rainworld_pagination()
 add_action('init', 'rainworld_header_scripts'); // Add Custom Scripts to wp_head
 add_action('wp_print_scripts', 'rainworld_conditional_scripts'); // Add Conditional Page Scripts
 add_action('wp_enqueue_scripts', 'rainworld_styles'); // Add Theme Stylesheet
-add_action('init', 'register_rainworld_menu'); // Add rainworld Blank Menu
+add_action('init', 'register_rainworld_menu'); // Add rainworld  Menu
 add_action('init', 'rainworld_pagination'); // Add rainworld Pagination
 
 // Remove Actions
