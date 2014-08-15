@@ -1,45 +1,4 @@
-@mixin rounded($radius) {
-  -webkit-border-radius: $radius+px;
-     -moz-border-radius: $radius+px;
-      -ms-border-radius: $radius+px;
-       -o-border-radius: $radius+px;
-          border-radius: $radius+px;
-}
-
-@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
-  @if $inset {
-    -webkit-box-shadow:inset $top $left $blur $color;
-    -moz-box-shadow:inset $top $left $blur $color;
-    box-shadow:inset $top $left $blur $color;
-  } @else {
-    -webkit-box-shadow: $top $left $blur $color;
-    -moz-box-shadow: $top $left $blur $color;
-    box-shadow: $top $left $blur $color;
-  }
-}
 
 @mixin letterpress($opacity) {
     text-shadow: 1px 1px 0px rgba(255,255,255, $opacity);
-}
-
-@mixin font-size($sizeValue: 1.6) {
-  font-size: ($sizeValue * 10) + px;
-  font-size: $sizeValue + rem;
-}
-
-@mixin opacity($opacity) {
-  opacity: $opacity;
-  $opacity-ie: $opacity * 100;
-  filter: alpha(opacity=$opacity-ie); //IE8
-}
-
-@mixin gradient($fromColor, $toColor) {
-background-color: $toColor;
-background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor));
-background-image: -webkit-linear-gradient(top, $fromColor, $toColor);
-background-image:    -moz-linear-gradient(top, $fromColor, $toColor);
-background-image:     -ms-linear-gradient(top, $fromColor, $toColor);
-background-image:      -o-linear-gradient(top, $fromColor, $toColor);
-background-image:         linear-gradient(top, $fromColor, $toColor);
-filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='$fromColor', EndColorStr='$toColor');
 }

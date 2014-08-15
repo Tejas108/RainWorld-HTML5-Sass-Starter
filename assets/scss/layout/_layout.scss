@@ -1,0 +1,17 @@
+#wrapper  {
+	@include outer-container;
+	border: 1px solid red;
+}
+
+#main-header  {
+	border: 1px solid;
+	@include span-columns(6);
+	@include clearfix;
+	@include media($small-scr)  {
+			color: red;
+	}
+}
+
+section  {
+
+}

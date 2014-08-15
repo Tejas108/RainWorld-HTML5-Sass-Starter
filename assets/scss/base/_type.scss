@@ -1,9 +1,0 @@
-$base-font: 62.5%;
-
-html  {
-	font-size: $base-font;
-}
-
-p  {
-	@include font-size(1.3);
-}
