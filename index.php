@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-		<section>
+		<section class="main-content">
 
 			<?php if (have_posts()) : ?>
 			<?php while (have_posts()) : the_post(); ?>
@@ -13,6 +13,9 @@
 				<section>
 					<?php the_content('Read more on "'.the_title('', '', false).'" &raquo;'); ?>
 				</section>
+				<div class="test">
+					I'm a test box
+				</div>
 				<footer>
 					<p><?php the_tags('Tags: ', ', ', '<br>'); ?> Posted in <?php the_category(', '); ?> &bull; <?php edit_post_link('Edit', '', ' &bull; '); ?> <?php comments_popup_link('Respond to this post &raquo;', '1 Response &raquo;', '% Responses &raquo;'); ?></p>
 				</footer>

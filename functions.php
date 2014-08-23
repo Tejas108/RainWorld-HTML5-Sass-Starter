@@ -45,7 +45,7 @@ function rainworld_nav()
 	array(
 		'theme_location'  => 'header-menu',
 		'menu'            => '',
-		'container'       => 'div',
+		'container'       => 'nav',
 		'container_class' => 'menu-{menu slug}-container',
 		'container_id'    => '',
 		'menu_class'      => 'menu',
@@ -67,22 +67,15 @@ function rainworld_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-    	wp_register_script('conditionizr', get_template_directory_uri() . '/assets/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
-        wp_enqueue_script('conditionizr'); 
-
-        wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
+        wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/lib/modernizr.min.js', array(), '2.8.3'); // Modernizr
         wp_enqueue_script('modernizr'); 
 
-        wp_register_script('rainworldscripts', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
-        wp_enqueue_script('rainworldscripts'); 
-    }
-}
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js", false, null);
+        wp_enqueue_script('jquery');
 
-function rainworld_conditional_scripts()
-{
-    if (is_page('pagenamehere')) {
-        wp_register_script('scriptname', get_template_directory_uri() . '/assets/js/scriptname.js', array('jquery'), '1.0.0'); // Conditional script(s)
-        wp_enqueue_script('scriptname'); 
+        wp_register_script('rainworldscripts', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), '1.0.0', true); // Custom scripts
+        wp_enqueue_script('rainworldscripts'); 
     }
 }
 
@@ -181,7 +174,6 @@ function rainworld_pagination()
 
 // Actions
 add_action('init', 'rainworld_header_scripts'); // Add Custom Scripts to wp_head
-add_action('wp_print_scripts', 'rainworld_conditional_scripts'); // Add Conditional Page Scripts
 add_action('wp_enqueue_scripts', 'rainworld_styles'); // Add Theme Stylesheet
 add_action('init', 'register_rainworld_menu'); // Add rainworld  Menu
 add_action('init', 'rainworld_pagination'); // Add rainworld Pagination
@@ -203,9 +195,6 @@ remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 //Filters
 add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
 add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
-
-
-
 
 
 
