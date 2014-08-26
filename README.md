@@ -1,4 +1,4 @@
-RW_Starter_Theme
+RainWorld HTML5 Sass Starter
 ================
 
-WordPress starter theme with Sass and HTML5 semantics
+A tasty starter theme for WordPress. Built with semantic HTML5 and Sass. Bourbon, Bitters and Neat baked right in.
