@@ -3,10 +3,8 @@
 			<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
 
 				<li>
-					<h2>H5 Template Theme</h2>
-					<p>H5 is a theme template designed with HTML 5 that you can use for your site <em>right now</em>. 
-					It contains all the template files required to customize your own theme quickly and easily. 
-					H5 looks and works great in all modern browsers and is completely valid HTML 5 and CSS.</p>
+					<h2>RainWorld HTML5 Sass Starter</h2>
+					<p>A tasty starter theme for WordPress. Built with semantic HTML5 and Sass. Bourbon, Bitters and Neat baked right in.</p>
 				</li>
 				<li>
 					<h2>Search the Site</h2>
@@ -57,14 +55,6 @@
 
 				<?php } ?>
 
-				<li>
-					<h2>H5 Resources</h2>
-					<ul>
-						<li><a href="http://perishablepress.com/" title="Perishable Press">Perishable Press</a></li>
-						<li><a href="http://diggingintowordpress.com/" title="Digging into WordPress">Digging into WordPress</a></li>
-						<li><a href="http://css-tricks.com/" title="CSS Tricks">CSS Tricks</a></li>
-					</ul>
-				</li>
 			<?php endif; ?>
 			</ul>
 		</aside>
